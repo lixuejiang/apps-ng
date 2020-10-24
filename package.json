@@ -13,8 +13,8 @@
   ],
   "scripts": {
     "dev": "yarn workspace @phala/app dev",
-    "build": "yarn workspace @phala/app build",
-    "start": "yarn workspace @phala/app start"
+    "build": "APP_PHALA_URL=68.183.138.126 yarn workspace @phala/app build",
+    "start": "APP_PHALA_URL=68.183.138.126 yarn workspace @phala/app start"
   },
   "dependencies": {
     "@zeit-ui/react": "^1.8.0-canary.8",
