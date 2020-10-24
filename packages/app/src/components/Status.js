@@ -6,7 +6,14 @@ import { Status as StatusDisplay, StatusContext } from '@polkadot/react-componen
 import { useAccounts, useApi, useCall } from '@polkadot/react-hooks';
 import { stringToU8a } from '@polkadot/util';
 import { xxhashAsHex } from '@polkadot/util-crypto';
-import { useTranslation } from '@polkadot/apps/translate';
+import {
+  useTranslation as useTranslationBase,
+} from "react-i18next";
+
+function useTranslation() {
+  return useTranslationBase(["apps", "apps-routing"]);
+}
+
 let prevEventHash;
 function filterEvents(allAccounts, t, optionsAll, events) {
   const eventHash = xxhashAsHex(stringToU8a(JSON.stringify(events)));
